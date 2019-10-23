@@ -2,3 +2,7 @@
 **/.idea
 **/__pycache__
 .DS_Store
+**/dist
+*.tar.gz
+**/*.egg-info/
+
