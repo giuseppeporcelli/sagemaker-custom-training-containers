@@ -2,7 +2,9 @@ ACCOUNT_ID=$1
 REGION=$2
 REPO_NAME=$3
 
-docker build -f ./docker/Dockerfile -t $REPO_NAME ./docker
+cd ../package/ && python setup.py sdist && cp dist/custom_framework_training-1.0.0.tar.gz ../docker/code/
+
+docker build -f ../docker/Dockerfile -t $REPO_NAME ../docker
 
 docker tag $REPO_NAME $ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com/$REPO_NAME:latest
 

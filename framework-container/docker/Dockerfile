@@ -38,7 +38,7 @@ RUN ln -s $(which ${PYTHON}) /usr/local/bin/python
 
 WORKDIR /
 
-COPY custom_framework_container-1.0.0.tar.gz /custom_framework_container-1.0.0.tar.gz
+COPY code/custom_framework_training-1.0.0.tar.gz /custom_framework_training-1.0.0.tar.gz
 
 # Installing numpy, pandas, scikit-learn, scipy
 RUN ${PIP} install --no-cache --upgrade \
@@ -47,8 +47,8 @@ RUN ${PIP} install --no-cache --upgrade \
         scikit-learn==0.20.3 \
         requests==2.21.0 \
         scipy==1.2.1 \
-        /custom_framework_container-1.0.0.tar.gz && \
-    rm /custom_framework_container-1.0.0.tar.gz
+        /custom_framework_training-1.0.0.tar.gz && \
+    rm /custom_framework_training-1.0.0.tar.gz
 
 # Setting some environment variables.
 ENV PYTHONDONTWRITEBYTECODE=1 \
@@ -58,4 +58,4 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     LANG=C.UTF-8 \
     LC_ALL=C.UTF-8
 
-ENV SAGEMAKER_TRAINING_MODULE custom_framework_container.training:main
+ENV SAGEMAKER_TRAINING_MODULE custom_framework_training.training:main

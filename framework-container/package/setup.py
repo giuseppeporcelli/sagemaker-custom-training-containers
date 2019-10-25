@@ -8,11 +8,12 @@ from os.path import splitext
 from setuptools import find_packages, setup
 
 setup(
-    name='custom_framework_container',
+    name='custom_framework_training',
     version='1.0.0',
-    description='Open source library for creating custom framework containers to run on Amazon SageMaker.',
+    description='Custom framework container training package.',
+    keywords="custom framework contaier training package SageMaker",
 
-    packages=find_packages(where='src', exclude=('test',)),
+    packages=find_packages(where='src'),
     package_dir={'': 'src'},
     py_modules=[splitext(basename(path))[0] for path in glob('src/*.py')],
 
@@ -20,5 +21,5 @@ setup(
     author_email='giu.porcelli@gmail.com',
     license='Apache License 2.0',
     
-    install_requires=['sagemaker-containers']
+    install_requires=['sagemaker-containers==2.5.10']
 )
