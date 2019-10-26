@@ -1,2 +1,2 @@
-# sagemaker-hello-world-containers
-Hello world implementations of Amazon SageMaker-compatible containers
+# Amazon SageMaker custom training containers
+Implementations of Amazon SageMaker-compatible custom containers for training.
