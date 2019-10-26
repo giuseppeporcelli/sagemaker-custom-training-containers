@@ -19,7 +19,7 @@ def train(hp1, hp2, hp3, train_channel, validation_channel):
     net = None
         
     # Run training loop.
-    epochs = 1
+    epochs = 5
     for x in range(epochs):
         print("\nRunning epoch {0}...".format(x))
 

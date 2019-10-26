@@ -1,6 +1,9 @@
+# Part of the implementation of this container is based on the Amazon SageMaker Apache MXNet container.
+# https://github.com/aws/sagemaker-mxnet-container
+
 FROM ubuntu:16.04
 
-LABEL maintainer="Amazon AI"
+LABEL maintainer="Giuseppe A. Porcelli"
 
 # Defining some variables used at build time to install Python3
 ARG PYTHON=python3
