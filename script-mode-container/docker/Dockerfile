@@ -47,7 +47,7 @@ RUN ${PIP} install --no-cache --upgrade \
         pandas==0.24.1 \
         scikit-learn==0.20.3 \
         requests==2.21.0 \
-        scipy==1.2.1
+        scipy==1.2.2
 
 # Setting some environment variables.
 ENV PYTHONDONTWRITEBYTECODE=1 \
@@ -58,7 +58,7 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     LC_ALL=C.UTF-8
 
 RUN ${PIP} install --no-cache --upgrade \
-    sagemaker-containers
+    sagemaker-training
 
 # Copies code under /opt/ml/code where sagemaker-containers expects to find the script to run
 COPY code/* /opt/ml/code/

@@ -49,7 +49,7 @@ RUN ${PIP} install --no-cache --upgrade \
         pandas==0.24.1 \
         scikit-learn==0.20.3 \
         requests==2.21.0 \
-        scipy==1.2.1 \
+        scipy==1.2.2 \
         /custom_framework_training-1.0.0.tar.gz && \
     rm /custom_framework_training-1.0.0.tar.gz
 

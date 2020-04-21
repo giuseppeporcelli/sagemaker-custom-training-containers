@@ -1,16 +1,20 @@
 from __future__ import absolute_import
 
 import logging
-
-import sagemaker_containers.beta.framework as framework
+from sagemaker_training import entry_point, environment
 
 logger = logging.getLogger(__name__)
 
-def train(training_environment):
+def train(training_env):
     logger.info('Invoking user training script.')
-    
-    # Execute user script as module.
-    framework.modules.run_module(training_environment.module_dir, training_environment.to_cmd_args(),
-                                 training_environment.to_env_vars(), training_environment.module_name)
+
+    entry_point.run(
+        training_env.module_dir,
+        training_env.user_entry_point,
+        training_env.to_cmd_args(),
+        training_env.to_env_vars()
+    )
+
 def main():
-    train(framework.training_env())
+    training_env = environment.Environment()
+    train(training_env)
